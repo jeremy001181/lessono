@@ -1,0 +1,397 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"password"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "web/routes/autocomplete.coffee",
+			"settings":
+			{
+				"buffer_size": 809,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/config.coffee",
+			"settings":
+			{
+				"buffer_size": 175,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/bin/test.bat",
+			"settings":
+			{
+				"buffer_size": 77,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/test/_helper.js",
+			"settings":
+			{
+				"buffer_size": 57,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/test/config-test.coffee",
+			"settings":
+			{
+				"buffer_size": 480,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/app.js",
+			"settings":
+			{
+				"buffer_size": 960,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Nodejs/Nodejs.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pck",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Github: Open File"
+			],
+			[
+				"pcakge",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono/web/test/config-test.coffee",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono/web/node_modules/mongodb/lib/mongodb/connection/url_parser.js",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono/web/node_modules/mocha/mocha.js",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono/web/test/_helper.js",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/web/app.js",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/web/views/index.jade",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/web/routes/autocomplete.coffee",
+		"/D/My Documents/Google Drive/Projects/nodejs/zhongmingchen.com/routes/autocomplete.js",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/web/package.json",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/web/public/stylesheets/style.css",
+		"/D/My Documents/Google Drive/Projects/nodejs/zhongmingchen.com/package.json",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/lessono.sublime-workspace",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/lessono.sublime-project",
+		"/D/My Documents/Google Drive/Projects/nodejs/zhongmingchen.com/app.js",
+		"/D/My Documents/Google Drive/Projects/nodejs/lessono.com/views/layout.jade"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"		",
+			"assert",
+			"errorHandler"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "web/routes/autocomplete.coffee",
+					"settings":
+					{
+						"buffer_size": 809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "web/config.coffee",
+					"settings":
+					{
+						"buffer_size": 175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "web/bin/test.bat",
+					"settings":
+					{
+						"buffer_size": 77,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "web/test/_helper.js",
+					"settings":
+					{
+						"buffer_size": 57,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "web/test/config-test.coffee",
+					"settings":
+					{
+						"buffer_size": 480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								480,
+								480
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "web/app.js",
+					"settings":
+					{
+						"buffer_size": 960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								810,
+								810
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 165.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"web/config.coffee"
+			],
+			[
+				"dbconnectionurl",
+				"web/node_modules/mongodb/lib/mongodb/connection/url_parser.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.0,
+	"status_bar_visible": true
+}
