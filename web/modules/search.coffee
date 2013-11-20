@@ -2,7 +2,7 @@ dbclient = require("mongodb").MongoClient
 
 search = {}
 
-search.find = (query) ->
+search.find = (queries, fields) ->
 
 	#config = app.settings;
 	

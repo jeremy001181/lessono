@@ -3,6 +3,8 @@ assert = require 'assert'
 User   = require '../../models/user'
 
 describe 'User', ->
+
+
 	describe 'create', ->
 		user = null
 		before () ->

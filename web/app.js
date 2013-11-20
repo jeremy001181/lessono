@@ -27,6 +27,12 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+// test only
+
+if (app.configure("test", function function_name (argument) {
+	app.set('port', 3001);
+}));
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());

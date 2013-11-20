@@ -1,7 +1,7 @@
 
-require 'assert'
-require '../../modules/search'
+# require 'assert'
+# require '../../modules/search'
 
 
-describe 'search', () ->
-	
+# describe 'search', () ->
+# 	
