@@ -1,10 +1,13 @@
 
-require 'assert'
-require '../../modules/find'
-require '../../modules/user'
+assert = require 'assert'
+find = require '../../modules/find'
+_by = require '../../modules/criteria'
+
+require '../../models/user'
 
 describe 'find', ->
 	users = null
 	before () ->
-		users = find.user criteria.category(["math"])
-	it 'should return list of users'
+		users = find.users _by.categories(["math"])
+	it 'should return list of users', ->
+		assert.notEqual users, undefined
