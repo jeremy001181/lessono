@@ -4,17 +4,16 @@ _criteria = require '../../modules/criteria'
 
 describe 'criteria', ->
 
-	# describe 'category', ->
-	# 	before () ->
-	# 		criteria = _criteria.categories ["math", "art"]
-	# 	it 'should set criteria categories', ->
-	# 		assert.notEqual criteria.category, undefined
-	# 	it 'should set criteria categories', ->
-	# 		assert.notEqual criteria.category, undefined
+	describe 'category', ->
+		criteria = null
+		before () ->
+			criteria = _criteria.categories ["math", "art"]
+		it 'should set categories regex expression', ->
+			assert.equal criteria.categories.$regex, "/(\\bmath|\\bart)/gi"
 
 	describe 'name', ->
 		criteria = null
 		before () ->
 			criteria = _criteria.name "ming"
-		it 'should set regex expression', ->
+		it 'should set name regex expression', ->
 			assert.equal criteria.fullname.$regex, "/\\bming/gi"

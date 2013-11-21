@@ -7,8 +7,10 @@ criteria.name = (keyword) ->
 	return criteria
 
 criteria.categories = (categories) ->
-	criteria = name: 
-		$regex: new RegExp "\\b" + keyword, "ig"
+	pattern = "(\\b" + (categories.join "|\\b") + ")"
+
+	criteria = categories: 
+		$regex: new RegExp pattern, "ig"
 
 	return criteria
 
