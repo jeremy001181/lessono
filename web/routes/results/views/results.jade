@@ -1,0 +1,8 @@
+ul#listing
+  each user in users
+    li(class=user.type)= user.firstName
+      // Uncomment to implement editing
+        span.edit
+          a(href='/admin/pies/edit/') Edit
+
+!= partial('form')

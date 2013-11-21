@@ -3,26 +3,28 @@ dbclient = require("mongodb").MongoClient
 
 class Repository
 	
-	constructor: (connectionURL, total) ->
-		@connectionURL: connectionURL
-		@total: total
+	constructor: (connectionURL, collection, total) ->
+		@connectionURL= connectionURL
+		@total= total
+		@collection= collection
 
-	@find: (queries, fields, callback) ->
+	# expecting queries in format of: {field : {$regex : /pattern/}}
+	# expecting fields in format of: {"field1","field2" ...}
+	find: (queries, fields, callback) ->
 
 		dbclient.connect @connectionURL, (err, db) ->			
 			throw err  if err
-			collection = db.collection(query.collection)
+			collection = db.collection(@collection)
 
-			param = queries,
-				_id: 0
-				name: 1
-			
-			collection.find(param)
+			projections = {}			
+			for field in fields
+				projections[field] = 1
+
+			collection.find(queries, projections)
 				.limit(@total)
 				.toArray (err, results) ->
-					# Let's close the db
 					db.close()
-					callback err, results
+					callback null, results
 
 
 module.exports = Repository
