@@ -7,7 +7,7 @@ find = {}
 find.users = (criterias, callback) ->
 	users = []
 	# to add db config
-	repository = new Repository config.dbConnectionURL, "users", config.maxNumberOfSearchResults
+	repository = new Repository config.dbConnectionURL, 'users', config.maxNumberOfSearchResults
 
 	repository.find criterias, {}, (err, results)->
 		users = JSON.stringify(results)

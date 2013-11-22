@@ -1,6 +1,6 @@
 
-find = require "../moduels/find"
-By = require "../moduels/criteria"
+find = require '../moduels/find'
+By = require '../moduels/criteria'
 
 routes = (app) ->
 
@@ -13,7 +13,7 @@ routes = (app) ->
 		#todo: map keyword to criteria
 
 		find.users By.categories(criteria), (err, users)->
-			res.render "#{__dirname}/views/results",
+			res.render '#{__dirname}/views/results',
 				title: 'Results'
 				stylesheet: 'results'
 				users: users
