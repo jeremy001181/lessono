@@ -3,11 +3,11 @@
  * Module dependencies.
  */
 require('coffee-script');
-config = require('./config');
+// config = require('./config');
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
+//var routes = require('./routes');
+//var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
@@ -17,7 +17,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.set('settings', config);
+// app.set('settings', config);
 
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -40,7 +40,8 @@ if ('development' == app.get('env')) {
 
 // routes
 
-require('./routes/autocomplete')(app);
+require('./routes/results/routes')(app);
+require('./routes/home/routes')(app);
 
 
 http.createServer(app).listen(app.get('port'), function(){
