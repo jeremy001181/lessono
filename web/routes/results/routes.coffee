@@ -4,24 +4,24 @@ By = require '../../modules/criteria'
 routes = (app) ->
 
 	app.get '/results', (req, res) ->  
-		debugger	
-
-		keyword = req.query.term
+		
+		
+		keyword = req.query.q
 		return unless keyword
 
 		#todo: map keyword to criteria
+		criteria = []
+		criteria.push keyword
 
 		find.users By.categories(criteria), (err, users)->
+			
+			throw err if err
 
-			# todo: if err
-
-			res.render '#{__dirname}/views/results',
+			res.render __dirname + '/views/results',
 				title: 'Results'
 				stylesheet: 'results'
 				users: users
 
 
-			# res.send users.map (user) -> 
-			# 	user.name
 
 module.exports = routes

@@ -1,8 +1,5 @@
 (function($) {
 	
-	init = function() {};
-	 
-
 	fire = function(keyword) {
 		window.location = '/results?q=' + encodeURIComponent(keyword);
 	};
@@ -26,6 +23,14 @@
 			$button.on('click', function () {
 				fire($textbox.val());
 			});
+
+			$textbox.on('keypress', function (e) {
+				if(e.which == 13) {
+					fire($(this).val());
+				}
+			});
+
+			// generate html ...
 
 			return $this.append($wrapper
 				.append($textbox)

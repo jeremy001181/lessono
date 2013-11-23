@@ -25,11 +25,11 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 86400000 }));
 
 // test only
 
-if (app.configure("test", function function_name (argument) {
+if (app.configure("test", function () {
 	app.set('port', 3001);
 }));
 

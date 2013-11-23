@@ -2,10 +2,8 @@
 routes = (app) ->
 	app.get '/', (req, res) ->
 
-
-		# res.send __dirname
 		res.render __dirname + '/views/index',
 			title: 'home'
-			stylesheet: 'home'
+			stylesheets: ['search']
 
 module.exports = routes

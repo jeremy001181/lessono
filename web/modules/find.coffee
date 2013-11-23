@@ -9,12 +9,10 @@ find.users = (criterias, callback) ->
 	# to add db config
 	repository = new Repository config.dbConnectionURL, 'users', config.maxNumberOfSearchResults
 
-	repository.find criterias, {}, (err, results)->
-		users = JSON.stringify(results)
+	repository.find criterias, ["firstName","lastName"], (err, results)->
+		users = results.map (val) ->
+			return new User val
+		
 		callback null, users
-
-
-
-
 
 module.exports = find
