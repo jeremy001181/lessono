@@ -19,7 +19,7 @@ routes = (app) ->
 
 			res.render __dirname + '/views/results',
 				title: 'Results'
-				stylesheet: 'results'
+				stylesheets: 'results'
 				users: users
 
 
