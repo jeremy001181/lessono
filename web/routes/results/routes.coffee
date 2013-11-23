@@ -8,7 +8,7 @@ routes = (app) ->
 		
 		keyword = req.query.q
 		return unless keyword
-
+		console.log keyword
 		#todo: map keyword to criteria
 		criteria = []
 		criteria.push keyword
@@ -19,7 +19,7 @@ routes = (app) ->
 
 			res.render __dirname + '/views/results',
 				title: 'Results'
-				stylesheets: 'results'
+				stylesheets: ['results']
 				users: users
 
 
