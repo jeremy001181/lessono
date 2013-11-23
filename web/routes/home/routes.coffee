@@ -4,6 +4,6 @@ routes = (app) ->
 
 		res.render __dirname + '/views/index',
 			title: 'home'
-			stylesheets: ['search']
+			stylesheets: ['home']
 
 module.exports = routes
