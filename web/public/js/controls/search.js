@@ -39,6 +39,3 @@
 	};
 })(jQuery);
 
-$(document).ready(function() {
-	$('#searchbox').search();
-});
