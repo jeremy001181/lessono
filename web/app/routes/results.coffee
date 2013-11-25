@@ -1,5 +1,5 @@
-find = require '../../modules/find'
-By = require '../../modules/criteria'
+find = require '../lib/find'
+By = require '../lib/criteria'
 
 routes = (app) ->
 

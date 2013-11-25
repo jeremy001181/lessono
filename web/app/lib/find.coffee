@@ -1,6 +1,6 @@
 Repository = require './repository'
 User = require '../models/user'
-config = require '../config'
+config = require '../../config'
 
 find = {}
 

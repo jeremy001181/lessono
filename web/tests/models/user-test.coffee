@@ -1,6 +1,6 @@
 
 assert = require 'assert'
-User   = require '../../models/user'
+User   = require '../../app/models/user'
 
 describe 'User', ->
 

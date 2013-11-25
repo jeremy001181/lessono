@@ -1,6 +1,6 @@
 
 assert   = require 'assert'
-_criteria = require '../../modules/criteria'
+_criteria = require '../../app/lib/criteria'
 
 describe 'criteria', ->
 
