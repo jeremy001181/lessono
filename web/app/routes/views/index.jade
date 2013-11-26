@@ -1,15 +1,14 @@
 extends layout
 
+block head  
+  
 block content
 
-	h1= title
-	p Welcome to #{title}
+  h1= title
+  p Welcome to #{title}
 
-	div#searchbox
+  div#searchbox
+
 block footer
-	script(type='text/javascript' src='/js/controls/search.js')	
-	script.
-		$(document).ready(function() {
-			$('#searchbox').search();
-		});
+  script(type='text/javascript' src='/static/js/home.js')  
 

@@ -1,17 +1,17 @@
 criteria = {}
 
 criteria.name = (keyword) ->
-	criteria = fullname: 
-		$regex: new RegExp '\\b' + keyword, 'ig'
+  criteria = fullname: 
+    $regex: new RegExp '\\b' + keyword, 'ig'
 
-	return criteria
+  return criteria
 
 criteria.categories = (categories) ->
-	pattern = '(\\b' + (categories.join '|\\b') + ')'
+  pattern = '(\\b' + (categories.join '|\\b') + ')'
 
-	criteria = categories: 
-		$regex: new RegExp pattern, 'ig'
+  criteria = categories: 
+    $regex: new RegExp pattern, 'ig'
 
-	return criteria
+  return criteria
 
 module.exports = criteria

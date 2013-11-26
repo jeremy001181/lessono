@@ -1,22 +1,14 @@
-
 /**
  * Module dependencies.
  */
+
 require('coffee-script');
 
 var express = require('express');
 var http = require('http');
 var path = require('path');
 var app = express();
-
-// asset rack
-
-// rack = require 'asset-rack'
-
-// var asset = new rack.JadeAsset({
-//  url: '/templates.js',
-//     dirname: './templates'
-// });
+var assets = require('./assets');
 
 // all environments
 
@@ -25,6 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
+app.use(assets);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -46,19 +39,25 @@ if (app.configure("test", function () {
 }));
 
 // development only
+
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
 // routes
 
-require('./app/routes/results')(app);
-require('./app/routes/home')(app);
+require('./app/routes/results')(app, assets);
+require('./app/routes/home')(app, assets);
 
 app.get('*', function(req, res){
   res.send('Say what???', 404);
 });
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+
+assets.on('complete', function() {
+    
+  http.createServer(app).listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'));
+  });
+
 });
