@@ -8,7 +8,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var app = express();
-var assets = require('./assets');
+var rack = require('./assets');
 
 // all environments
 
@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
-app.use(assets);
+app.use(rack);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -46,15 +46,15 @@ if ('development' == app.get('env')) {
 
 // routes
 
-require('./app/routes/results')(app, assets);
-require('./app/routes/home')(app, assets);
+require('./app/routes/results')(app, rack);
+require('./app/routes/home')(app, rack);
 
 app.get('*', function(req, res){
   res.send('Say what???', 404);
 });
 
 
-assets.on('complete', function() {
+rack.on('complete', function() {
     
   http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
