@@ -8,19 +8,19 @@ class Repository
   # expecting queries in format of: {field : {$regex : /pattern/}}
   # expecting fields in format of: {"field1","field2" ...}
   find: (queries, fields, callback) ->
-    _ = @
+    that = @
 
-    dbclient.connect _.connectionURL, (err, db) ->  
+    dbclient.connect that.connectionURL, (err, db) ->  
           
       throw err if err
-      collection = db.collection(_.collection)
+      collection = db.collection(that.collection)
 
       projections = {}
       for field in fields
         projections[field] = 1
 
       collection.find(queries, projections)
-        .limit(_.total)
+        .limit(that.total)
         .toArray (err, results) ->
           db.close()
           callback null, results

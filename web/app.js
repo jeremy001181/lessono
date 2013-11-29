@@ -5,10 +5,11 @@
 require('coffee-script');
 
 var express = require('express');
-var http = require('http');
-var path = require('path');
-var app = express();
-var rack = require('./assets');
+var http 	= require('http');
+var path 	= require('path');
+var app 	= express();
+var rack 	= require('./assets');
+var config 	= require('./config');
 
 // all environments
 
@@ -46,8 +47,9 @@ if ('development' == app.get('env')) {
 
 // routes
 
-require('./app/routes/results')(app, rack);
-require('./app/routes/home')(app, rack);
+//require('./app/routes/results')(app, rack);
+//require('./app/routes/home')(app, rack);
+require('./app/routes/api/suggest')(app, config);
 
 app.get('*', function(req, res){
   res.send('Say what???', 404);

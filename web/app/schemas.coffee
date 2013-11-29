@@ -2,24 +2,38 @@ mongoose = require 'mongoose'
 
 schemas = {}
 
-schemas.user = mongoose.Schema
-  username: String
+#
+# Tag
+#
 
-# schemas.user.methods.whatIsMyName = ->
-#   return @name
+schemas.tag = mongoose.Schema
+  _id: String
 
 #
 # Lesson
 #
 
 schemas.lesson = mongoose.Schema
-  lesson_id: ObjectId
+  lesson_id: mongoose.Schema.ObjectId
   title: String,
   description: String,
-  tags: Array,
+  tags: [String],
   next_available_at: Array,
-  reputation: Number,
+  reputation: Number
 
+#
+# User
+#
+
+schemas.user = mongoose.Schema
+  _id: String
+  first_name: String
+  last_name: String
+  lessons: [schemas.lesson]
+  online: Boolean
+
+# schemas.user.methods.whatIsMyName = ->
+#   return @name
 
 
 # ...

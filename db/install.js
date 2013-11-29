@@ -1,7 +1,7 @@
-// drop all indexes
+// drop collections
 
-db.users.dropIndexes()
-db.lessons.dropIndexes()
+db.users.drop()
+db.tags.drop()
 
 // load all test data into in-memory object from test-data directory
 
@@ -17,20 +17,51 @@ if (users)
   }
 }
 
-// insert lesson data
+// insert session data
 
-if (lessons)
+if (sessions)
 {
-  for(var i in lessons)
+  for(var i in sessions)
   {
-    db.lessons.save(lessons[i])
+    db.sessions.save(sessions[i])
   }
 }
 
+// insert session data
+
+if (tags)
+{
+  for(var i in tags)
+  {
+    db.tags.save(tags[i])
+  }
+}
+
+
 // add indexes
 
-db.lessons.ensureIndex({
-  title: "text",
-  description: "text",
-  tags: "text"
-}, { name : "title_description_tags"});
+db.users.ensureIndex({
+  "first_name": "text",
+  "last_name": "text",
+  "lessons.title": "text",
+  "lessons.description": "text",
+  "lessons.tags": "text"
+}, { name : "name_title_description_tags"});
+
+db.users.ensureIndex(
+  {
+    "lessons._id": 1
+  }, 
+  { 
+    unique : true
+  }
+);
+
+db.tags.ensureIndex(
+  {
+    name: 1
+  }, 
+  { 
+    unique : true
+  }
+);
