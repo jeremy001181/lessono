@@ -6,50 +6,51 @@ require('./suggestion.js');
 
 module.exports = (function($) {
   
-  fire = function(keyword) {
-    window.location = '/results?q=' + encodeURIComponent(keyword);
-  };
-
-
   $.fn.search = function(options) {
+
+    fire = function(keyword) {
+      window.location = '/results?q=' + encodeURIComponent(keyword);
+    };    
     
     return this.each(function() {
 
       options = $.extend({}, {
-          autocomplete: {
+          endpoint: '/api/search',
+          suggest: {
             enabled: true,
             count:6,
-            endpoint: '/autocomplete'
+            endpoint: '/api/suggest'
         }
       }, options);
+
+      // generate html ...
 
       var $this = $(this);      
       var $wrapper = $('<div class="search-wrapper" />');     
       var $button = $('<input type="button" class="search-button" value="Search" />');
       var $textbox = $('<input type="text" class="search-textbox" />');
 
-      // event binding ...
+      setTimeout(function (argument) {
+        // event binding ...
+        $button.on('click', function () {
+          fire($textbox.val());
+        });
 
-      $button.on('click', function () {
-        fire($textbox.val());
-      });
+        $textbox.on('keypress', function (e) {
+          if(e.which == 13) {
+            fire($(this).val());
+          }
+        });
 
-      $textbox.on('keypress', function (e) {
-        if(e.which == 13) {
-          fire($(this).val());
-        }
-      });
+        // features enabling
+        if (options.suggest.enabled)
+          $textbox.autosuggestion(options.suggest);
+      }, 20);
 
-      // features enabling
-
-      if (options.autocomplete.enabled)
-        $textbox.autosuggestion(options.autocomplete);
-
-      // generate html ...
-
-      return $this.append($wrapper
-        .append($textbox)
-        .append($button));
+      return $this.append(
+        $wrapper
+          .append($textbox)
+          .append($button))
     });
   };
 })(jQuery);

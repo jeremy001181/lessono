@@ -1,6 +1,6 @@
 models = require '../../models'
 
-routes = (app, config)->
+routes = (app, config) ->
 
   #
   # api - suggest
@@ -16,6 +16,7 @@ routes = (app, config)->
 
     models.create 'Tag', (err, Tag, conn) ->
       throw err if err
+      
       Tag
         .find({'_id': new RegExp('^' + q + '.*', 'ig')})
         .limit(config.maxNumberOfAutocompleteItems)
@@ -24,6 +25,5 @@ routes = (app, config)->
           throw err  if err
           res.send tags.map (tag) ->
             return tag._id
-    
 
 module.exports = routes

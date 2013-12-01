@@ -4,8 +4,7 @@ assets = [
   new rack.BrowserifyAsset(
     url: "/static/js/home.js"
     filename: __dirname + "/public/js/home.js"
-    gzip: true
-    compress: true), 
+    gzip: true), 
   # new rack.StaticAssets(
   #   urlPrefix: "/static/css"
   #   dirname: __dirname + "/public/css/"
