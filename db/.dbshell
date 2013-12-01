@@ -1,0 +1,12 @@
+db.tags.find()
+more
+db.tags.find({_id : /js*/i})
+db.tags.find({_id : /^js*/i})
+db.tags.find({_id : /^js*/i}).explain()
+db.tags.find({_id : /^js*/i}).limit(6).explain()
+db.tags.find({_id : /^js*/i}, {_id:1}).limit(6).explain()
+db.tags.indexStats()
+db.tags.indexStat()
+db.tags.indexesStat()
+db.tags.indexesStats()
+db.tags.stats()

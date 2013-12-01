@@ -8,7 +8,11 @@ routes = (app, config)->
 
   app.get '/api/search', (req, res) ->
     # Analyze type of search
-    keyword = req.query.q
+    q = req.query.q
+
+    throw unless q
+
+
 
     
     

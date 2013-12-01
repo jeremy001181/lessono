@@ -5,22 +5,28 @@ routes = (app, assets) ->
 
   app.get '/results', (req, res) ->  
     
-    
-    keyword = req.query.q
-    return unless keyword
-    console.log keyword
-    #todo: map keyword to criteria
-    criteria = []
-    criteria.push keyword
+    q = req.query.q
+    unless q
+      res.send null
 
-    find.users By.categories(criteria), (err, users)->
-      
+    models.create 'User', (err, User, conn) ->
       throw err if err
 
-      res.render __dirname + '/views/results',
-        title: 'Results'
-        stylesheets: [assets.tag '/static/css/results.css']
-        users: users
+      User.find
+
+
+    # #todo: map keyword to criteria
+    # criteria = []
+    # criteria.push keyword
+
+    # find.users By.categories(criteria), (err, users)->
+      
+    #   throw err if err
+
+    #   res.render __dirname + '/views/results',
+    #     title: 'Results'
+    #     stylesheets: [assets.tag '/static/css/results.css']
+    #     users: users
 
 
 

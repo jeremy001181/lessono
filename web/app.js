@@ -7,7 +7,7 @@ require('coffee-script');
 var express = require('express');
 var http 	= require('http');
 var path 	= require('path');
-var app 	= express();
+var app 	= module.exports = express();
 var rack 	= require('./assets');
 var config 	= require('./config');
 

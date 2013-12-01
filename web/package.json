@@ -11,10 +11,12 @@
     "jade": "*",
     "coffee-script": "~1.6.3",
     "asset-rack": "~2.2.2",
-    "mongoose": "~3.8.1"
+    "mongoose": "~3.8.1",
+    "mongoose-text-search": "0.0.2"
   },
   "devDependencies": {
     "mocha": "~1.14.0",
-    "sinon": "~1.7.3"
+    "sinon": "~1.7.3",
+    "request": "~2.9.203"
   }
 }

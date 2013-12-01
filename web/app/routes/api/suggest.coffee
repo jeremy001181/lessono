@@ -8,10 +8,10 @@ routes = (app, config) ->
 
   app.get '/api/suggest', (req, res) ->
     # Analyze type of search
-    q = if req.query.q then req.query.q else ''
+    q = req.query.q
 
     unless q
-      res.send 200
+      res.send()
       return
 
     models.create 'Tag', (err, Tag, conn) ->
@@ -23,7 +23,7 @@ routes = (app, config) ->
         .exec (err, tags) ->
           conn.close()
           throw err  if err
-          res.send tags.map (tag) ->
+          res.json tags.map (tag) ->
             return tag._id
 
 module.exports = routes
