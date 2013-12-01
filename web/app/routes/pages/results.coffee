@@ -1,5 +1,8 @@
-find = require '../lib/find'
-By = require '../lib/criteria'
+
+models = require '../../models'
+
+# dbclient = require("mongodb").MongoClient
+
 
 routes = (app, assets) ->
 
@@ -9,10 +12,34 @@ routes = (app, assets) ->
     unless q
       res.send null
 
+    # dbclient.connect "mongodb://127.0.0.1:27017/test", (err, db) ->
+
+    #   throw err  if err
+    #   search = 
+    #     text: 'users'
+    #     search: q
+      
+    #   db.command search, (e, o) -> 
+    #     db.close()
+    #     if e 
+    #         console.log e, 'error'    
+    #     else 
+    #       res.send 200
+
     models.create 'User', (err, User, conn) ->
       throw err if err
 
-      User.find
+      User
+        .textSearch q, (err, results) ->
+          debugger
+          conn.close()
+          throw err if err
+
+          console.log results
+
+          res.send 200
+
+
 
 
     # #todo: map keyword to criteria

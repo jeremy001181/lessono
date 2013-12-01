@@ -47,7 +47,7 @@ if ('development' == app.get('env')) {
 
 // routes
 
-//require('./app/routes/results')(app, rack);
+require('./app/routes/pages/results')(app, rack);
 require('./app/routes/pages/home')(app, rack);
 require('./app/routes/api/suggest')(app, config);
 

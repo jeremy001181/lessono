@@ -1,0 +1,16 @@
+db.system_indexes
+db.system_indexes.find()
+db.systems_index.find()
+show collections
+db.system.indexes.find()
+db.system.indexes.find().pretty()
+db.users.runCommand("text" , {search : "json"})
+show collections
+db.users.runCommand("text" , { search : "js"})
+show collections
+db.system.indexes
+db.system.indexes.find()
+db.system.indexes
+db.runCommand("text" , { search : "js"})
+db.command("text" , { search : "js"})
+db.users.runCommand("text" , { search : "js"})

@@ -1,6 +1,6 @@
 mongod --remove
 
-mongod --config "C:\Program Files\mongodb\mongod.cfg" --setParameter textSearchEnabled=true --install
+mongod --config "d:\Program Files\mongodb\mongod.cfg" --setParameter textSearchEnabled=true --install
 net start MongoDB
 
 mongo localhost/admin --eval "printjson(db.runCommand({logRotate:1}))"

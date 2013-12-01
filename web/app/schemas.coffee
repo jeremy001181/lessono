@@ -1,19 +1,21 @@
 mongoose = require 'mongoose'
 
+textSearch = require 'mongoose-text-search'
+
 schemas = {}
 
 #
 # Tag
 #
 
-schemas.tag = mongoose.Schema
+schemas.Tag = mongoose.Schema
   _id: String
 
 #
 # Lesson
 #
 
-schemas.lesson = mongoose.Schema
+schemas.Lesson = mongoose.Schema
   lesson_id: mongoose.Schema.ObjectId
   title: String,
   description: String,
@@ -25,14 +27,25 @@ schemas.lesson = mongoose.Schema
 # User
 #
 
-schemas.user = mongoose.Schema
+schemas.User = mongoose.Schema
   _id: String
   first_name: String
   last_name: String
   lessons: [schemas.lesson]
   online: Boolean
 
-# schemas.user.methods.whatIsMyName = ->
+
+
+schemas.User.plugin textSearch
+
+# schemas.User.index 
+#   'first_name':'text'
+#   'last_name':'text'  
+  # 'lessons.title':'text'
+  # 'lessons.description':'text'
+  # 'lessons.tags':'text'
+
+# schemas.User.methods.whatIsMyName = ->
 #   return @name
 
 
