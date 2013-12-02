@@ -1,5 +1,5 @@
 mongoose   = require 'mongoose'
-textSearch = require 'mongoose-text-search'
+# textSearch = require 'mongoose-text-search'
 
 schemas = {}
 
@@ -15,7 +15,10 @@ schemas.Tag = mongoose.Schema
 #
 
 schemas.Lesson = mongoose.Schema
-  lesson_id: mongoose.Schema.ObjectId
+  _id: mongoose.Schema.ObjectId
+  user_id: String,
+  first_name: String,
+  last_name: String,
   title: String,
   description: String,
   tags: [String],
@@ -26,15 +29,17 @@ schemas.Lesson = mongoose.Schema
 # User
 #
 
-schemas.Users = mongoose.Schema
+schemas.User = mongoose.Schema
   _id: String
   first_name: String
   last_name: String
-  lessons: [schemas.lesson]
+  lessons: [
+    lesson_id: mongoose.Schema.ObjectId
+  ]
   online: Boolean
 
 
-schemas.Users.plugin textSearch
+# schemas.User.plugin textSearch
 
 # schemas.User.index 
 #   'first_name':'text'

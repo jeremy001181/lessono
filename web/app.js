@@ -47,9 +47,11 @@ if ('development' == app.get('env')) {
 
 // routes
 
+require('./app/routes/pages/lesson')(app, rack);
 require('./app/routes/pages/results')(app, rack);
 require('./app/routes/pages/home')(app, rack);
 require('./app/routes/api/suggest')(app, config);
+require('./app/routes/api/search')(app, config);
 
 app.get('*', function(req, res){
   res.send('Say what???', 404);

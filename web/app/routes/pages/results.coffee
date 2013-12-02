@@ -9,10 +9,20 @@ routes = (app, assets) ->
     q = req.query.q
     unless q
       res.send null
-    
-    textSearch q, 'users', (err, output) ->
+
+    textSearch q, 'lessons', (err, output) ->
       throw err if err
-      res.json output.results
+
+      lessons = output.results.map (val)->
+        val.obj
+
+
+      res.render __dirname + '/views/results', 
+        title: 'results'
+        stylesheets: [assets.tag '/static/css/results.css']
+        lessons: lessons
+
+
 
     # models.create 'Users', (err, User, conn) ->
     #   throw err if err

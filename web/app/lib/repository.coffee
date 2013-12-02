@@ -8,22 +8,40 @@ class Repository
   # expecting queries in format of: {field : {$regex : /pattern/}}
   # expecting fields in format of: {"field1","field2" ...}
   find: (queries, fields, callback) ->
-    that = @
+    self = @
 
-    dbclient.connect that.connectionURL, (err, db) ->  
+    dbclient.connect self.connectionURL, (err, db) ->  
           
       throw err if err
-      collection = db.collection(that.collection)
+      collection = db.collection(self.collection)
 
       projections = {}
       for field in fields
         projections[field] = 1
 
       collection.find(queries, projections)
-        .limit(that.total)
+        .limit(self.total)
         .toArray (err, results) ->
           db.close()
           callback null, results
 
+  textSearch: (q, project, callback) ->
+    self = @
+
+    dbclient.connect self.connectionURL, (err, db) ->  
+          
+      throw err if err
+      if err 
+        callback err, null
+        return
+
+      search = 
+        text: self.collection
+        search: q
+        project
+      
+      db.command search, (err, o) ->
+        db.close()
+        callback err, o
 
 module.exports = Repository
