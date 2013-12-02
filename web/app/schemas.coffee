@@ -1,5 +1,4 @@
-mongoose = require 'mongoose'
-
+mongoose   = require 'mongoose'
 textSearch = require 'mongoose-text-search'
 
 schemas = {}
@@ -27,7 +26,7 @@ schemas.Lesson = mongoose.Schema
 # User
 #
 
-schemas.User = mongoose.Schema
+schemas.Users = mongoose.Schema
   _id: String
   first_name: String
   last_name: String
@@ -35,8 +34,7 @@ schemas.User = mongoose.Schema
   online: Boolean
 
 
-
-schemas.User.plugin textSearch
+schemas.Users.plugin textSearch
 
 # schemas.User.index 
 #   'first_name':'text'

@@ -1,8 +1,6 @@
 
 models = require '../../models'
-
-# dbclient = require("mongodb").MongoClient
-
+textSearch = require '../../lib/text-search'
 
 routes = (app, assets) ->
 
@@ -11,33 +9,23 @@ routes = (app, assets) ->
     q = req.query.q
     unless q
       res.send null
-
-    # dbclient.connect "mongodb://127.0.0.1:27017/test", (err, db) ->
-
-    #   throw err  if err
-    #   search = 
-    #     text: 'users'
-    #     search: q
-      
-    #   db.command search, (e, o) -> 
-    #     db.close()
-    #     if e 
-    #         console.log e, 'error'    
-    #     else 
-    #       res.send 200
-
-    models.create 'User', (err, User, conn) ->
+    
+    textSearch q, 'users', (err, output) ->
       throw err if err
+      res.json output.results
 
-      User
-        .textSearch q, (err, results) ->
-          debugger
-          conn.close()
-          throw err if err
+    # models.create 'Users', (err, User, conn) ->
+    #   throw err if err
 
-          console.log results
+    #   User
+    #     .textSearch q, (err, results) ->
+    #       debugger
+    #       conn.close()
+    #       throw err if err
 
-          res.send 200
+    #       console.log results
+
+    #       res.send 200
 
 
 
