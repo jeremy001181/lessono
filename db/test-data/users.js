@@ -5,6 +5,7 @@ var users =
     "_id": "zhongmingc@asos.com",
     "first_name": "Zhongming",
     "last_name": "Chen",
+    "password": "",
     "address": {},
     "online": true,
     "lessons": [
@@ -15,6 +16,7 @@ var users =
     "_id": "chenqi@gmail.com",
     "first_name": "Qi",
     "last_name": "Chen",
+    "password": "",
     "address": {
     },
     "online": true,

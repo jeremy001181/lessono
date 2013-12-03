@@ -17,7 +17,7 @@ routes = (app, assets) ->
       lessons = output.results.map (val)->
         val.obj
 
-      res.render __dirname + '/views/results', 
+      res.render "#{__dirname}/views/results", 
         title: 'results'
         stylesheets: [assets.tag '/static/css/results.css']
         lessons: lessons

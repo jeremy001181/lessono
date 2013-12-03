@@ -1,16 +1,14 @@
 mongoose = require 'mongoose'
-schemas  = require './schemas'
 config = require '../config'
 
 
 models = {}
 
-
 models.create = (name, callback)->  
   
   conn = mongoose.createConnection config.dbConnectionURL
-  model = conn.model name, schemas[name]
-  callback null, model, conn
-
+  schema = require "./schemas/#{name}"
+  model = conn.model name, schema
+  callback model, conn
 
 module.exports = models

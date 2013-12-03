@@ -9,6 +9,10 @@ assets = [
     url: "/static/js/results.js"
     filename: __dirname + "/public/js/results.js"
     gzip: true), 
+  new rack.BrowserifyAsset(
+    url: "/static/js/register.js"
+    filename: __dirname + "/public/js/register.js"
+    gzip: true), 
   # new rack.StaticAssets(
   #   urlPrefix: "/static/css"
   #   dirname: __dirname + "/public/css/"
@@ -17,6 +21,10 @@ assets = [
   new rack.LessAsset(
     url: '/static/css/home.css'
     filename: __dirname + "/public/css/home.less"
+  ),
+  new rack.LessAsset(
+    url: '/static/css/register.css'
+    filename: __dirname + "/public/css/register.less"
   ),
   new rack.LessAsset(
     url: '/static/css/results.css'

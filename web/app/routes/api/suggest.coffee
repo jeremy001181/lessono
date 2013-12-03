@@ -14,8 +14,7 @@ routes = (app, config) ->
       res.send()
       return
 
-    models.create 'Tag', (err, Tag, conn) ->
-      throw err if err
+    models.create 'Tag', (Tag, conn) ->
       
       Tag
         .find({'_id': new RegExp('^' + q + '.*', 'ig')})

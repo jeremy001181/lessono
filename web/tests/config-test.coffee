@@ -12,4 +12,8 @@ describe 'config', () ->
     assert.equal hasBeenSet(config.dbConnectionURL), true
   it 'should set max number of search results', ->  
     assert.equal hasBeenSet(config.maxNumberOfSearchResults), true
+  it 'should set opentok api key', ->  
+    assert.equal hasBeenSet(config.opentokApiKey), true
+  it 'should set opentok api secret', ->  
+    assert.equal hasBeenSet(config.opentokApiSecret), true
 

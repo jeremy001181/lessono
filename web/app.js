@@ -50,6 +50,7 @@ if ('development' == app.get('env')) {
 require('./app/routes/pages/lesson')(app, rack);
 require('./app/routes/pages/results')(app, rack);
 require('./app/routes/pages/home')(app, rack);
+require('./app/routes/pages/register')(app, rack);
 require('./app/routes/api/suggest')(app, config);
 require('./app/routes/api/search')(app, config);
 

@@ -5,10 +5,7 @@ routes = (app, assets) ->
 
     sessionId = req.params.id  
 
-
-
-    models.create 'Lesson', (err, Lesson, conn) ->
-      throw err if err
+    models.create 'Lesson', (Lesson, conn) ->
 
       Lesson.findOne {'_id': sessionId}, (err, lesson) ->
         conn.close()
