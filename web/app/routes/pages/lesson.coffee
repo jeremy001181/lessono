@@ -5,6 +5,8 @@ routes = (app, assets) ->
 
     sessionId = req.params.id  
 
+
+
     models.create 'Lesson', (err, Lesson, conn) ->
       throw err if err
 

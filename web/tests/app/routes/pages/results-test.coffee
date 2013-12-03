@@ -4,7 +4,7 @@ express = require 'express'
 assert  = require 'assert'
 request = require 'request'
 app     = require '../../../../app'
-models = require '../../../../app/models'
+textSearch = require '../../../../app/lib/text-search'
 sinon   = require 'sinon'
 
 describe 'results', ->
@@ -12,24 +12,22 @@ describe 'results', ->
     describe 'with no query string', ->
       body = null
       res  = null
+      mock = null
 
       before (done) ->
 
-        sinon.spy(models, 'create');
+        mock = sinon.spy(textSearch);
 
-        request {uri:'http://localhost:' + app.settings.port + '/results?q=json'}, (err, response, _body) ->
+        request {uri:'http://localhost:' + app.settings.port + '/results'}, (err, response, _body) ->
           body = _body
           res = response
           done()
       
-      after () ->
-        models.create.restore()
-
       it 'should return no body when q is not provided', ()->
         assert.equal res.body, undefined
       it 'should have status code equal 200', ()->
         assert.equal res.statusCode, 200
-      it 'should return without continue to create model', ()->
-        assert.equal models.create.callCount, 0
+      it 'should return without continue to do search', ()->
+        assert.equal mock.called, false
 
     

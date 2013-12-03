@@ -9,6 +9,7 @@ routes = (app, assets) ->
     q = req.query.q
     unless q
       res.send null
+      return
 
     textSearch q, 'lessons', (err, output) ->
       throw err if err
@@ -16,13 +17,10 @@ routes = (app, assets) ->
       lessons = output.results.map (val)->
         val.obj
 
-
       res.render __dirname + '/views/results', 
         title: 'results'
         stylesheets: [assets.tag '/static/css/results.css']
         lessons: lessons
-
-
 
     # models.create 'Users', (err, User, conn) ->
     #   throw err if err
